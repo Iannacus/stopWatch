@@ -1,5 +1,30 @@
+:root {
+  --btn-primary-color: #EF476F;
+  --background: #FFD166;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
 .App {
   text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .App {
+    max-width: 600px;
+  }
 }
 
 .App-logo {
@@ -7,32 +32,124 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.stopWatch-container {
+  height: 100vh;
+  width: 100%;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 2%;
   align-items: center;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.sup {
+  height: 50vh;
+}
+
+.menu {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+
+
+.time {
+  display: flex;
+  justify-content: center;
+  width: 95%; 
+  align-items: center;
+  gap: 10px;
+  text-align: center;;
+}
+
+.time__value {
+  width: 20%;
+}
+
+.picker {
+  margin: 0;
+}
+
+.time__separator {
+  width: 5%;
+}
+
+.time__container {
+  width: 60%;
+  margin: 15px auto;
+  border-bottom: solid 2px var(--btn-primary-color);
+}
+
+
+
+.time_circle {
+  margin: 0 auto;
+  width: 40vh;
+  height: 40vh;
+}
+
+.bot {
+  height: 50vh;
+  width: 100%;
+  background-color: white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.laps {
+  height: 40vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-bottom: 10px 0 ;
+  margin: 10px auto;
+}
+
+.buttons {
+  
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  height: 10vh;
+}
+
+
+.btn {
+  width: 50%;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 16px;
   color: white;
+  display: inline-block;
+  height: 70%;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 7px;
+  background-color: var(--btn-primary-color);
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.active {
+  border-radius: 0;
+  border-bottom: solid 3px var(--btn-primary-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 600px) {
+  .btn {
+    font-size: 20px;
+    padding: 5px 30px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.btn-menu {
+  background-color: transparent;
+  padding: 10px 0;
 }

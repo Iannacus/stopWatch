@@ -1,0 +1,27 @@
+:root {
+    --color-secundario: #06D6A0;
+    --active: #EF476F;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: var(--color-secundario);
+    border-radius: 4px;
+  }
+
+  .scroll::-webkit-scrollbar-thumb:active {
+    background-color: var(--active);
+  }
+
+  .scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-blue);
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .scroll::-webkit-scrollbar-track{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
