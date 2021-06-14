@@ -115,9 +115,6 @@ export function incrementAsync(init, varr, timeInterval, isTimer) {
                 dispatch(interval(setInterval(() => { dispatch(inc(1)) }, timeInterval)));
             else
                 dispatch(interval(setInterval(() => { dispatch(incrementSeconds(-1)) }, timeInterval)));
-            console.log(varr);
-
-
         }
         else {
             clearInterval(varr);

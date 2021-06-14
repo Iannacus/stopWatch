@@ -19,18 +19,20 @@ function Menu() {
         <div className='menu'>
             <button
                 onClick={() => {
-                    if (!isRunning)
+                    if (!isRunning) {
                         active ? cls1 = 'active' : cls1 = '';
-                    dispatch(setShow(true))
+                        dispatch(setShow(true))
+                    }
                 }}
                 className={`btn btn-menu ${cls1}`}>
                 StopWatch
             </button>
             <button
                 onClick={() => {
-                    if (!isRunning)
+                    if (!isRunning) {
                         active ? cls2 = 'active' : cls2 = '';
-                    dispatch(setShow(false))
+                        dispatch(setShow(false))
+                    }
                 }}
                 className={`btn btn-menu ${cls2}`} >Timer</button>
         </div>

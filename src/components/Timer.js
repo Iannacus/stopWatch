@@ -50,13 +50,14 @@ function Timer() {
 
     useEffect(() => {
         if (seconds < 1) {
-            if (isRunning)
+            if (isRunning) {
                 dispatch(currentSecs(1));
-            if (minutes > 0) {
-                dispatch(incrementMinutes(-1))
-                dispatch(resetSec('59'));
-            } else {
-                dispatch(resetSec('00'));
+                if (minutes > 0) {
+                    dispatch(incrementMinutes(-1))
+                    dispatch(resetSec('59'));
+                } else {
+                    dispatch(resetSec('00'));
+                }
             }
 
         } else {
@@ -66,22 +67,25 @@ function Timer() {
     }, [seconds, minutes, isRunning, dispatch]);
 
     useEffect(() => {
-        if (minutes < 1) {
-            if (hour > 0) {
-                dispatch(incrementHours(-1))
-                dispatch(resetMin('59'));
-            } else {
-                dispatch(resetMin('00'));
+        if (isRunning) {
+            if (minutes < 1) {
+                if (hour > 0) {
+                    dispatch(incrementHours(-1))
+                    dispatch(resetMin('59'));
+                } else {
+                    dispatch(resetMin('00'));
+                }
             }
-
         }
-    }, [minutes, hour, dispatch]);
+    }, [minutes, hour, isRunning, dispatch]);
 
     useEffect(() => {
-        if (hour < 1) {
-            dispatch(resetHours('00'));
+        if (isRunning) {
+            if (hour < 1) {
+                dispatch(resetHours('00'));
+            }
         }
-    }, [hour, dispatch]);
+    }, [hour, isRunning, dispatch]);
 
     //useEffect para actualizar los valores en la barra de progreso
     useEffect(() => {
